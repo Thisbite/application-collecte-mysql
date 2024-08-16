@@ -5,55 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e38bc3b6-dac4-40c0-9165-0cd7265c0f3e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Application_collecte.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app_database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app_form.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app_get.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/accouchement.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/activite_ies.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/cycle.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/departement.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/direction_statistique.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/domaine.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/etat_vaccination.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/examen_scolaire.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/groupe_age.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/indicateurs.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/infection_respiratoire.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/infrastructure_sani.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/maladie_ist.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/maladie_pev.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/maladies_infectieuse.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/niveau_secon_2nd_cycle.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/niveau_technique.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/niveaux_désagrégation.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/ok_sexe.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/pathologie.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/prescolaire.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/primaire_ds" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/professionnelle_cycle.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/region.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/register_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/second_1er_cycle.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/service_medicaux.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/sexe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/sexe_ok.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/sous_domaine.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/sous_prefecture.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/superieur_cycle.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/tranche_age.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/trimestre.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/type_maladie.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_xlsx/type_vaccination.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
