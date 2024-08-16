@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e38bc3b6-dac4-40c0-9165-0cd7265c0f3e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Application_collecte.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app_database.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app_form.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app_get.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/accouchement.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/activite_ies.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/cycle.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/departement.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/direction_statistique.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/domaine.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/etat_vaccination.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/examen_scolaire.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/groupe_age.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/indicateurs.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/infection_respiratoire.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/infrastructure_sani.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/maladie_ist.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/maladie_pev.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/maladies_infectieuse.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/niveau_secon_2nd_cycle.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/niveau_technique.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/niveaux_désagrégation.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/ok_sexe.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/pathologie.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/prescolaire.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/primaire_ds" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/professionnelle_cycle.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/region.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/register_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/second_1er_cycle.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/service_medicaux.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/sexe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/sexe_ok.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/sous_domaine.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/sous_prefecture.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/superieur_cycle.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/tranche_age.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/trimestre.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/type_maladie.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file_xlsx/type_vaccination.xlsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2kjnzA7MxYFhgYKRk4MDfehiklE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.app_database.executor": "Run",
+    "Python.app_get.executor": "Run",
+    "Python.config.executor": "Run",
+    "Python.register_data.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-975db3bf15a3-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.18034.82" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e38bc3b6-dac4-40c0-9165-0cd7265c0f3e" name="Changes" comment="" />
+      <created>1723806113250</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1723806113250</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
