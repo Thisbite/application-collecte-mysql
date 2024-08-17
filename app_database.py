@@ -1,6 +1,15 @@
 import config as cf
 import mysql.connector
 from mysql.connector import Error
+
+
+conn = cf.create_connection()
+cursor = conn.cursor()
+#cursor.execute("DROP TABLE valeur_indicateur_libelle")
+#cursor.execute("""
+#ALTER TABLE valeur_indicateur_libelle
+#ADD CONSTRAINT UNIQUE (id);
+#""")
 def table_administration_parametre():
     # Connect to the SQLite database (or create it if it doesn't exist)
     conn = cf.create_connection()
@@ -350,7 +359,64 @@ def table_niveau_desagregation():
             age_id INTEGER PRIMARY KEY,
             age TEXT
         );
+        """,
+
         """
+        CREATE TABLE IF NOT EXISTS valeur_indicateur_libelle (
+    id INT PRIMARY KEY,
+    nom_region VARCHAR(255),
+    nom_departement VARCHAR(255),
+    nom_sousprefecture VARCHAR(255),
+    nom_indicateur VARCHAR(255),
+    Valeur DECIMAL(10, 2),
+    Annee INT,
+    sexe VARCHAR(50),
+    groupe_age VARCHAR(255),
+    age INT,
+    nom_cycle VARCHAR(255),
+    nom_prescolaire VARCHAR(255),
+    nom_primaire VARCHAR(255),
+    nom_secondaire_1er_cycle VARCHAR(255),
+    nom_secondaire_2nd_cycle VARCHAR(255),
+    nom_technique VARCHAR(255),
+    nom_superieur VARCHAR(255),
+    nom_professionnel VARCHAR(255),
+    nom_type_examen VARCHAR(255),
+    nom_infrastructures_sanitaires VARCHAR(255),
+    nom_lieu_accouchement VARCHAR(255),
+    nom_etat_vaccinal VARCHAR(255),
+    nom_types_de_vaccination VARCHAR(255),
+    nom_pathologie VARCHAR(255),
+    nom_tranche_age VARCHAR(255),
+    nom_maladies_du_pev VARCHAR(255),
+    nom_maladies_infectieuses VARCHAR(255),
+    nom_infectieuses_respiratoire VARCHAR(255),
+    nom_maladies_ist VARCHAR(255),
+    nom_type_de_maladie VARCHAR(255),
+    nom_activites_iec VARCHAR(255),
+    nom_service_medicaux VARCHAR(255),
+    nom_type_infrastructures_sportives VARCHAR(255),
+    nom_disciplines_sportives VARCHAR(255),
+    nom_type_infrastructures_culturelles VARCHAR(255),
+    nom_type_patrimoines_culturels_immatériels VARCHAR(255),
+    nom_type_actions_culturelles_artistiques VARCHAR(255),
+    nom_type_operateurs_oeuvres_esprit VARCHAR(255),
+    nom_type_groupes_culturels VARCHAR(255),
+    nom_type_manifestations_culturelles VARCHAR(255),
+    nom_trimestre VARCHAR(255),
+    nom_etat_des_ouvrages VARCHAR(255),
+    nom_type_abonnnement VARCHAR(255),
+    nom_type_suivi VARCHAR(255),
+    nom_type_de_vulnerabilite VARCHAR(255),
+    nom_type_de_prise_charge VARCHAR(255),
+    nom_niveau VARCHAR(255)
+);
+
+        """
+
+
+
+
     ]
 
     # Execute each create table command
@@ -492,5 +558,7 @@ def table_valeurs_indicateur():
 
 # Appel de la fonction pour créer la table
 table_valeurs_indicateur()
+
+
 
 

@@ -1,5 +1,9 @@
 import streamlit as st
 import app_form as af
+import config as cf
+import pandas as pd
+import app_modifier as am
+conn=cf.create_connection()
 st.set_page_config(page_title="Formulaire de collecte", page_icon="📊")
 
 st.markdown("""
@@ -129,3 +133,6 @@ st.markdown("""
         """, unsafe_allow_html=True)
 
 af.form()
+#am.modifier()
+
+
