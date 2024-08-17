@@ -6,10 +6,32 @@ from mysql.connector import Error
 conn = cf.create_connection()
 cursor = conn.cursor()
 #cursor.execute("DROP TABLE valeur_indicateur_libelle")
-#cursor.execute("""
-#ALTER TABLE valeur_indicateur_libelle
-#ADD CONSTRAINT UNIQUE (id);
-#""")
+
+
+
+def ajouter_colonnes():
+    try:
+        conn = cf.create_connection()
+        cursor = conn.cursor()
+
+        # Ajouter les colonnes statut, commentaires, et date_rejet
+        #cursor.execute("ALTER TABLE valeur_indicateur_libelle ADD COLUMN statut VARCHAR(20) DEFAULT 'Approuvé';")
+        #cursor.execute("ALTER TABLE valeur_indicateur_libelle ADD COLUMN commentaires TEXT;")
+        cursor.execute("ALTER TABLE valeur_indicateur_libelle ADD COLUMN Agent INT;")
+
+        # Confirmer les changements
+        conn.commit()
+
+        cursor.close()
+        conn.close()
+
+        print("Agent ajouté avec succès")
+
+    except mysql.connector.Error as err:
+        print(f"Erreur lors de l'ajout des colonnes : {err}")
+
+#ajouter_colonnes()
+
 def table_administration_parametre():
     # Connect to the SQLite database (or create it if it doesn't exist)
     conn = cf.create_connection()

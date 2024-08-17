@@ -137,30 +137,27 @@ st.markdown("""
         </style>
         """, unsafe_allow_html=True)
 
+import mysql.connector
+import config as cf  # Assurez-vous que ce module est correctement importé pour la connexion
+
 def modifier_valeur_indicateur_libelle(id, nom_region=None, nom_departement=None, nom_sousprefecture=None,
-                                      nom_indicateur=None,
-                                      Valeur=None, Annee=None, sexe=None, groupe_age=None, age=None, nom_cycle=None,
-                                      nom_prescolaire=None, nom_primaire=None, nom_secondaire_1er_cycle=None,
-                                      nom_secondaire_2nd_cycle=None,
+                                      nom_indicateur=None, Valeur=None, Annee=None, sexe=None, groupe_age=None,
+                                      age=None, nom_cycle=None, nom_prescolaire=None, nom_primaire=None,
+                                      nom_secondaire_1er_cycle=None, nom_secondaire_2nd_cycle=None,
                                       nom_technique=None, nom_superieur=None, nom_professionnel=None,
-                                      nom_type_examen=None,
-                                      nom_infrastructures_sanitaires=None, nom_lieu_accouchement=None,
-                                      nom_etat_vaccinal=None,
+                                      nom_type_examen=None, nom_infrastructures_sanitaires=None,
+                                      nom_lieu_accouchement=None, nom_etat_vaccinal=None,
                                       nom_types_de_vaccination=None, nom_pathologie=None, nom_tranche_age=None,
-                                      nom_maladies_du_pev=None,
-                                      nom_maladies_infectieuses=None, nom_infectieuses_respiratoire=None,
-                                      nom_maladies_ist=None,
+                                      nom_maladies_du_pev=None, nom_maladies_infectieuses=None,
+                                      nom_infectieuses_respiratoire=None, nom_maladies_ist=None,
                                       nom_type_de_maladie=None, nom_activites_iec=None, nom_service_medicaux=None,
                                       nom_type_infrastructures_sportives=None, nom_disciplines_sportives=None,
-                                      nom_type_infrastructures_culturelles=None,
-                                      nom_type_patrimoines_culturels_immatériels=None,
-                                      nom_type_actions_culturelles_artistiques=None,
-                                      nom_type_operateurs_oeuvres_esprit=None,
+                                      nom_type_infrastructures_culturelles=None, nom_type_patrimoines_culturels_immatériels=None,
+                                      nom_type_actions_culturelles_artistiques=None, nom_type_operateurs_oeuvres_esprit=None,
                                       nom_type_groupes_culturels=None, nom_type_manifestations_culturelles=None,
-                                      nom_trimestre=None,
-                                      nom_etat_des_ouvrages=None, nom_type_abonnnement=None, nom_type_suivi=None,
-                                      nom_type_de_vulnerabilite=None,
-                                      nom_type_de_prise_charge=None, nom_niveau=None):
+                                      nom_trimestre=None, nom_etat_des_ouvrages=None, nom_type_abonnnement=None,
+                                      nom_type_suivi=None, nom_type_de_vulnerabilite=None, nom_type_de_prise_charge=None,
+                                      nom_niveau=None, statut='Approuvé'):
     try:
         # Connexion à la base de données
         conn = cf.create_connection()
@@ -184,9 +181,10 @@ def modifier_valeur_indicateur_libelle(id, nom_region=None, nom_departement=None
                 nom_type_groupes_culturels = %s, nom_type_manifestations_culturelles = %s,
                 nom_trimestre = %s, nom_etat_des_ouvrages = %s, nom_type_abonnnement = %s,
                 nom_type_suivi = %s, nom_type_de_vulnerabilite = %s, nom_type_de_prise_charge = %s,
-                nom_niveau = %s
+                nom_niveau = %s, statut = %s
             WHERE id = %s
-            """  # Exécution de la requête
+            """
+        # Exécution de la requête
         cursor.execute(query, (
             nom_region, nom_departement, nom_sousprefecture, nom_indicateur, Valeur, Annee, sexe,
             groupe_age, age, nom_cycle, nom_prescolaire, nom_primaire, nom_secondaire_1er_cycle,
@@ -198,7 +196,7 @@ def modifier_valeur_indicateur_libelle(id, nom_region=None, nom_departement=None
             nom_type_infrastructures_culturelles, nom_type_patrimoines_culturels_immatériels,
             nom_type_actions_culturelles_artistiques, nom_type_operateurs_oeuvres_esprit, nom_type_groupes_culturels,
             nom_type_manifestations_culturelles, nom_trimestre, nom_etat_des_ouvrages, nom_type_abonnnement,
-            nom_type_suivi, nom_type_de_vulnerabilite, nom_type_de_prise_charge, nom_niveau, id
+            nom_type_suivi, nom_type_de_vulnerabilite, nom_type_de_prise_charge, nom_niveau, statut, id
         ))
 
         # Validation de la transaction
@@ -211,22 +209,55 @@ def modifier_valeur_indicateur_libelle(id, nom_region=None, nom_departement=None
         print(f"Erreur : {err}")
 
 
-def modifier():
-    st.markdown("<h2 class='text-center text-primary custom-bold-text'>Formulaire de rejet</h2>",
-                unsafe_allow_html=True)
-    id = st.number_input("ID de l'enregistrement", min_value=1, step=1)
-    if id:
-        with st.form("modification"):
-            try:
-                # Connexion à la base de données pour obtenir les valeurs existantes
-                conn = cf.create_connection()
-                cursor = conn.cursor(dictionary=True)
-                cursor.execute("SELECT * FROM valeur_indicateur_libelle WHERE id = %s", (id,))
-                record = cursor.fetchone()
-                cursor.close()
-                conn.close()
+import mysql.connector
+import datetime
 
-                if record:
+
+def enregistrer_rejet(id, commentaires):
+    try:
+        # Connexion à la base de données
+        conn = cf.create_connection()
+        cursor = conn.cursor()
+
+        # Obtenir la date et l'heure actuelles
+        date_rejet = datetime.datetime.now()
+
+        # Marquer l'enregistrement comme rejeté et ajouter les commentaires
+        query = """
+        UPDATE valeur_indicateur_libelle
+        SET statut = 'Rejeté', commentaires = %s, date_rejet = %s
+        WHERE id = %s
+        """
+        cursor.execute(query, (commentaires, date_rejet, id))
+
+        # Enregistrement des changements
+        conn.commit()
+
+        cursor.close()
+        conn.close()
+
+    except mysql.connector.Error as err:
+        print(f"Erreur lors de l'enregistrement du rejet : {err}")
+
+
+def modifier():
+    st.markdown("<h2 class='text-center text-primary custom-bold-text'>Formulaire de rejet et d'approbation</h2>",
+                unsafe_allow_html=True)
+
+    id = st.number_input("ID de l'enregistrement", min_value=1, step=1)
+
+    if id:
+        try:
+            # Connexion à la base de données pour obtenir les valeurs existantes
+            conn = cf.create_connection()
+            cursor = conn.cursor(dictionary=True)
+            cursor.execute("SELECT * FROM valeur_indicateur_libelle WHERE id = %s", (id,))
+            record = cursor.fetchone()
+            cursor.close()
+            conn.close()
+
+            if record:
+                with st.form("modification"):
                     # Disposer les champs sur 4 colonnes
                     cols = st.columns(4)
 
@@ -236,15 +267,14 @@ def modifier():
                         nom_sousprefecture = st.text_input("Nom de la sous-préfecture",
                                                            value=record['nom_sousprefecture'])
                         nom_indicateur = st.text_input("Nom de l'indicateur", value=record['nom_indicateur'])
-                        Valeur = st.number_input("Valeur", value=float(record['Valeur']) if record['Valeur']
-                        is not None else 0.0, format = "%.2f")
-
-                        Annee = st.number_input("Année", value=int(record['Annee']) if record['Annee']
-                        is not None else 2024)
+                        Valeur = st.number_input("Valeur",
+                                                 value=float(record['Valeur']) if record['Valeur'] is not None else 0.0,
+                                                 format="%.2f")
+                        Annee = st.number_input("Année",
+                                                value=int(record['Annee']) if record['Annee'] is not None else 2024)
                         sexe = st.text_input("Sexe", value=record['sexe'])
                         groupe_age = st.text_input("Groupe d'âge", value=record['groupe_age'])
-                        age = st.number_input("Âge", value=int(record['age']) if record['age']
-                        is not None else 0)
+                        age = st.number_input("Âge", value=int(record['age']) if record['age'] is not None else 0)
                         nom_cycle = st.text_input("Nom du cycle", value=record['nom_cycle'])
                         nom_prescolaire = st.text_input("Nom du préscolaire", value=record['nom_prescolaire'])
                         nom_primaire = st.text_input("Nom du primaire", value=record['nom_primaire'])
@@ -317,33 +347,45 @@ def modifier():
                                                                  value=record['nom_type_de_prise_charge'])
                         nom_niveau = st.text_input("Nom du niveau", value=record['nom_niveau'])
 
-                    if st.form_submit_button("Mettre à jour"):
-                        modifier_valeur_indicateur_libelle(
-                            id, nom_region, nom_departement, nom_sousprefecture, nom_indicateur, Valeur, Annee,
-                            sexe, groupe_age, age, nom_cycle, nom_prescolaire, nom_primaire, nom_secondaire_1er_cycle,
-                            nom_secondaire_2nd_cycle, nom_technique, nom_superieur, nom_professionnel, nom_type_examen,
-                            nom_infrastructures_sanitaires, nom_lieu_accouchement, nom_etat_vaccinal,
-                            nom_types_de_vaccination, nom_pathologie, nom_tranche_age, nom_maladies_du_pev,
-                            nom_maladies_infectieuses, nom_infectieuses_respiratoire, nom_maladies_ist,
-                            nom_type_de_maladie,
-                            nom_activites_iec, nom_service_medicaux, nom_type_infrastructures_sportives,
-                            nom_disciplines_sportives,
-                            nom_type_infrastructures_culturelles, nom_type_patrimoines_culturels_immatériels,
-                            nom_type_actions_culturelles_artistiques, nom_type_operateurs_oeuvres_esprit,
-                            nom_type_groupes_culturels,
-                            nom_type_manifestations_culturelles, nom_trimestre, nom_etat_des_ouvrages,
-                            nom_type_abonnnement,
-                            nom_type_suivi, nom_type_de_vulnerabilite, nom_type_de_prise_charge, nom_niveau)
-                        st.success("Enregistrement avec succès")
+                    commentaires = st.text_area("Commentaires de Rejet", value=record['commentaires'],
+                                                help="Ajoutez des commentaires en cas de rejet")
 
-            except mysql.connector.Error as err:
-                st.error(f"Erreur : {err}")
+                    # Ajouter les boutons Rejeter et Approuver
+                    col1, col2 = st.columns(2)
+                    with col1:
+                        if st.form_submit_button("Rejeter"):
+                            # Gérer le rejet : enregistrer les commentaires et marquer comme rejeté
+                            enregistrer_rejet(id, commentaires)
+                            st.warning("Le questionnaire a été rejeté.")
+
+                    with col2:
+                        if st.form_submit_button("Approuver"):
+                            # Gérer l'approbation : mettre à jour l'enregistrement
+                            modifier_valeur_indicateur_libelle(
+                                id, nom_region, nom_departement, nom_sousprefecture, nom_indicateur, Valeur, Annee,
+                                sexe, groupe_age, age, nom_cycle, nom_prescolaire, nom_primaire,
+                                nom_secondaire_1er_cycle,
+                                nom_secondaire_2nd_cycle, nom_technique, nom_superieur, nom_professionnel,
+                                nom_type_examen,
+                                nom_infrastructures_sanitaires, nom_lieu_accouchement, nom_etat_vaccinal,
+                                nom_types_de_vaccination, nom_pathologie, nom_tranche_age, nom_maladies_du_pev,
+                                nom_maladies_infectieuses, nom_infectieuses_respiratoire, nom_maladies_ist,
+                                nom_type_de_maladie, nom_activites_iec, nom_service_medicaux,
+                                nom_type_infrastructures_sportives,
+                                nom_disciplines_sportives, nom_type_infrastructures_culturelles,
+                                nom_type_patrimoines_culturels_immatériels,
+                                nom_type_actions_culturelles_artistiques, nom_type_operateurs_oeuvres_esprit,
+                                nom_type_groupes_culturels,
+                                nom_type_manifestations_culturelles, nom_trimestre, nom_etat_des_ouvrages,
+                                nom_type_abonnnement,
+                                nom_type_suivi, nom_type_de_vulnerabilite, nom_type_de_prise_charge, nom_niveau,statut='Approuvé'
+                            )
+                            st.success("Le questionnaire a été approuvé et mis à jour.")
+
+        except mysql.connector.Error as err:
+            st.error(f"Erreur : {err}")
     else:
         st.error("Aucun enregistrement trouvé.")
-
-
-
-
 
 
 modifier()
@@ -352,10 +394,10 @@ modifier()
 
 
 
-import pandas as pd
-conn=cf.create_connection()
-cursor=conn.cursor()
-cursor.execute("SELECT * FROM valeur_indicateur_libelle")
-df=cursor.fetchall()
-df=pd.DataFrame(df)
-st.dataframe(df)
+#import pandas as pd
+#conn=cf.create_connection()
+#cursor=conn.cursor()
+#cursor.execute("SELECT * FROM valeur_indicateur_libelle")
+#df=cursor.fetchall()
+#df=pd.DataFrame(df)
+#st.dataframe(df)

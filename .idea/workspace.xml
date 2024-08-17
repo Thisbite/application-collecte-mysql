@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e38bc3b6-dac4-40c0-9165-0cd7265c0f3e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app_copie_table.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app_modifier.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app_rejet_correction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_modifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_modifier.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,20 +36,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.app.executor": "Run",
-    "Python.app_copie_table.executor": "Run",
-    "Python.app_database.executor": "Run",
-    "Python.app_get.executor": "Run",
-    "Python.app_modifier.executor": "Run",
-    "Python.config.executor": "Run",
-    "Python.register_data.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.app_copie_table.executor&quot;: &quot;Run&quot;,
+    &quot;Python.app_database.executor&quot;: &quot;Run&quot;,
+    &quot;Python.app_get.executor&quot;: &quot;Run&quot;,
+    &quot;Python.app_modifier.executor&quot;: &quot;Run&quot;,
+    &quot;Python.config.executor&quot;: &quot;Run&quot;,
+    &quot;Python.register_data.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
