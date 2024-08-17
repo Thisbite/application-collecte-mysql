@@ -3,6 +3,7 @@ import app_form as af
 import config as cf
 import pandas as pd
 import app_modifier as am
+import app_copie_table as act
 conn=cf.create_connection()
 st.set_page_config(page_title="Formulaire de collecte", page_icon="📊")
 
@@ -133,6 +134,10 @@ st.markdown("""
         """, unsafe_allow_html=True)
 
 af.form()
-#am.modifier()
+
+act.insert_into_valeur_indicateur_libelle()
+
+
+
 
 

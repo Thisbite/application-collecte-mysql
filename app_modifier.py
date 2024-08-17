@@ -1,11 +1,9 @@
 import config as cf
 import streamlit as st
 import mysql.connector
+import app_copie_table as act
 
 
-
-import streamlit as st
-import app_form as af
 
 
 conn=cf.create_connection()
@@ -356,6 +354,7 @@ def modifier():
                         if st.form_submit_button("Rejeter"):
                             # Gérer le rejet : enregistrer les commentaires et marquer comme rejeté
                             enregistrer_rejet(id, commentaires)
+                            act.insert_rejet()
                             st.warning("Le questionnaire a été rejeté.")
 
                     with col2:
@@ -380,13 +379,16 @@ def modifier():
                                 nom_type_abonnnement,
                                 nom_type_suivi, nom_type_de_vulnerabilite, nom_type_de_prise_charge, nom_niveau,statut='Approuvé'
                             )
+
                             st.success("Le questionnaire a été approuvé et mis à jour.")
+
 
         except mysql.connector.Error as err:
             st.error(f"Erreur : {err}")
     else:
         st.error("Aucun enregistrement trouvé.")
 
+act.insert_into_valeur_indicateur_libelle()
 
 modifier()
 

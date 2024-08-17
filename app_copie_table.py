@@ -266,7 +266,45 @@ def insert_into_valeur_indicateur_libelle():
     conn.close()
 
 
-#insert_into_valeur_indicateur_libelle()
+import mysql.connector
+
+
+def insert_rejet():
+    try:
+        conn = cf.create_connection()
+        cursor = conn.cursor()
+
+        # Sélectionner les données à insérer
+        query_select = """
+            SELECT * FROM valeur_indicateur_libelle WHERE statut = 'Rejeté'
+        """
+        cursor.execute(query_select)
+        rows = cursor.fetchall()
+
+        # Générer dynamiquement la liste des colonnes et des valeurs
+        columns = ', '.join([desc[0] for desc in cursor.description])
+        placeholders = ', '.join(['%s'] * len(cursor.description))
+
+        # Construire la requête d'insertion
+        query_insert = f"""
+            INSERT INTO valeur_rejet ({columns}) VALUES ({placeholders})
+            ON DUPLICATE KEY UPDATE 
+            {', '.join([f"{desc[0]} = VALUES({desc[0]})" for desc in cursor.description if desc[0] != 'id'])}
+        """
+
+        for row in rows:
+            cursor.execute(query_insert, row)
+
+        conn.commit()
+    except mysql.connector.Error as err:
+        print(f"Erreur lors de l'insertion : {err}")
+    finally:
+        cursor.close()
+        conn.close()
+
+
+insert_into_valeur_indicateur_libelle()
+insert_rejet()
 
 
 
