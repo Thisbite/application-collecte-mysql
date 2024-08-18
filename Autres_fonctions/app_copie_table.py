@@ -1,6 +1,6 @@
 import mysql.connector
 import pandas as pd
-import config as cf  # Assurez-vous que ce module contient la fonction create_connection()
+import Autres_fonctions.config as cf
 
 def afficher_valeurs_indicateurs():
     conn = cf.create_connection()

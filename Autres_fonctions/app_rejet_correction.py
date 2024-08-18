@@ -1,6 +1,31 @@
 import streamlit as st
 import mysql.connector
-import config as cf
+import Autres_fonctions.config as cf
+
+st.markdown("""
+    <style>
+        .title-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 4px solid orange;
+            border-left-color: green;
+            border-right-color:green;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 20px 0;
+            background-color: white;
+        }
+        .title-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: black;
+        }
+    </style>
+    <div class="title-container">
+        <h2 class="title-text">Formulaire de rejet </h2>
+    </div>
+""", unsafe_allow_html=True)
 
 
 def remplacer_nulls(record):

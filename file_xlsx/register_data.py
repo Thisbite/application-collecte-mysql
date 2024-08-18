@@ -1,6 +1,5 @@
 import pandas as pd
-import mysql.connector as mysql
-import config as cf
+import Autres_fonctions.config as cf
 
 conn = cf.create_connection()
 cursor = conn.cursor()

@@ -1,10 +1,80 @@
 import streamlit as st
-import app_get as ag
+import Autres_fonctions.app_get as ag
 
+
+st.markdown("""
+    <style>
+        .title-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 4px solid orange;
+            border-left-color: green;
+            border-right-color: green;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 20px 0;
+            background-color: white;
+        }
+        .title-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: black;
+        }
+    </style>
+    <div class="title-container">
+        <span class="title-text">QUESTIONNAIRE DE COLLECTE </span>
+    </div>
+""", unsafe_allow_html=True)
+
+
+st.markdown("""
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .custom-bold-text {
+            font-weight: bold;
+            color: black;
+            font-size: 45px; 
+        }
+        .stButton button {
+            background-color: green;
+            color: white;
+            display: block;
+            margin: 0 auto;
+            font-weight: bold;
+        }
+        .stTextInput > label, .stSelectbox label, .stNumberInput label {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: blue;
+            background: linear-gradient(to bottom, #cccccc 0%, #999999 100%);
+            border: 2px;
+            border-radius: 3px;
+        }
+        div[data-baseweb="base-input"], input[class] {
+            border: 2px;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: black;
+        }
+        .stForm {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(to bottom, #3399ff 0%, #00ffff 90%);
+            border: 2px solid;
+            border-radius: 3px;
+        }
+        .custom-label {
+            font-size: 1.2rem;
+            color: blue;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
 def form():
-    st.markdown("<h2 class='text-center text-primary custom-bold-text'>Formulaire de collecte</h2>",
-                unsafe_allow_html=True)
+
     # Entrée du code d'entité géographique avec le cadre bleu
     with st.expander("Cliquer ici", expanded=True):
 
@@ -1194,6 +1264,7 @@ def form():
     return
 
 
+form()
 
 # import affichage_data
 # df=affichage_data.afficher_valeurs_indicateurs('annuiare.db')

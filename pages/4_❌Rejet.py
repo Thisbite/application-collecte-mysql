@@ -1,6 +1,87 @@
+import Autres_fonctions.config as cf
 import streamlit as st
 import mysql.connector
-import config as cf
+import Autres_fonctions.app_copie_table as act
+import mysql.connector
+
+
+conn=cf.create_connection()
+st.set_page_config(page_title="Formulaire de rejet", page_icon="📊")
+
+
+st.markdown("""
+    <style>
+        .title-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 4px solid orange;
+            border-left-color: green;
+            border-right-color: green;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 20px 0;
+            background-color: white;
+        }
+        .title-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: black;
+        }
+    </style>
+    <div class="title-container">
+        <span class="title-text">QUESTIONNAIRE INCOMPLET </span>
+    </div>
+""", unsafe_allow_html=True)
+
+
+st.markdown("""
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .custom-bold-text {
+            font-weight: bold;
+            color: black;
+            font-size: 45px; 
+        }
+        .stButton button {
+            background-color: green;
+            color: white;
+            display: block;
+            margin: 0 auto;
+            font-weight: bold;
+        }
+        .stTextInput > label, .stSelectbox label, .stNumberInput label {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: blue;
+            background: linear-gradient(to bottom, #cccccc 0%, #999999 100%);
+            border: 2px;
+            border-radius: 3px;
+        }
+        div[data-baseweb="base-input"], input[class] {
+            border: 2px;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: black;
+        }
+        .stForm {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(to bottom, #3399ff 0%, #00ffff 90%);
+            border: 2px solid;
+            border-radius: 3px;
+        }
+        .custom-label {
+            font-size: 1.2rem;
+            color: blue;
+        }
+    </style>
+""", unsafe_allow_html=True)
+import streamlit as st
+import mysql.connector
+import Autres_fonctions.config as cf
 
 
 def update_and_delete_record(row):
@@ -141,3 +222,12 @@ if __name__ == "__main__":
 
 
 
+
+
+#import pandas as pd
+#conn=cf.create_connection()
+#cursor=conn.cursor()
+#cursor.execute("SELECT * FROM valeur_indicateur_libelle")
+#df=cursor.fetchall()
+#df=pd.DataFrame(df)
+#st.dataframe(df)

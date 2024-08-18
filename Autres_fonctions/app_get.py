@@ -1,6 +1,6 @@
 
 import pandas as pd
-import config as cf
+import Autres_fonctions.config as cf
 from mysql.connector import Error
 import streamlit as st
 def get_indicators(id_indicateur):

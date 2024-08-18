@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e38bc3b6-dac4-40c0-9165-0cd7265c0f3e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Accueil.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/4_❌Rejet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_copie_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_copie_table.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_modifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_modifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_copie_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/Autres_fonctions/app_copie_table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/Autres_fonctions/app_database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/2_Questionnaire.py" afterPathEscaped="$PROJECT_DIR$/pages/2_📝Questionnaire.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_get.py" beforeDir="false" afterPath="$PROJECT_DIR$/Autres_fonctions/app_get.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_modifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/3_✅Questionnaire_à_Approuver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_rejet_correction.py" beforeDir="false" afterPath="$PROJECT_DIR$/Autres_fonctions/app_rejet_correction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Autres_fonctions/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_xlsx/register_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/file_xlsx/register_data.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +58,13 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Autres_fonctions" />
+      <recent name="$PROJECT_DIR$/pages" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

@@ -1,142 +1,85 @@
-import config as cf
+import Autres_fonctions.config as cf
 import streamlit as st
 import mysql.connector
-import app_copie_table as act
-
-
+import Autres_fonctions.app_copie_table as act
+import mysql.connector
 
 
 conn=cf.create_connection()
 st.set_page_config(page_title="Formulaire de rejet", page_icon="📊")
 
+
 st.markdown("""
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-                <style>
+    <style>
+        .title-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 4px solid orange;
+            border-left-color: green;
+            border-right-color: green;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 20px 0;
+            background-color: white;
+        }
+        .title-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: black;
+        }
+    </style>
+    <div class="title-container">
+        <span class="title-text">QUESTIONNAIRE A APPROUVER </span>
+    </div>
+""", unsafe_allow_html=True)
 
-                    .custom-bold-text {
-                        font-weight: bold;
-                        color: black;
-                        font-size: 45px; 
-                    }
-                    .stButton button {
-                    background-color: orange;
-                    color: white;
-                    display: block;
-                    margin: 0 auto;
-                    font-weight: bold;
-                     }
 
-                </style>
-            """, unsafe_allow_html=True)
-
-# Couleur  pour css input text label
 st.markdown("""
-                <style>
-                .stTextInput > label {
-                font-size:150%; 
-                font-weight:bold; 
-                color:white; 
-                background:linear-gradient(to bottom, #cccccc 0%, #999999 100%);
-                border: 2px;
-                border-radius: 3px;
-                } 
-                </style>
-                """, unsafe_allow_html=True)
-
-# La forme pour les labels
-st.markdown("""
-            <style>
-            div[data-baseweb="base-input"]{ 
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .custom-bold-text {
+            font-weight: bold;
+            color: black;
+            font-size: 45px; 
+        }
+        .stButton button {
+            background-color: green;
+            color: white;
+            display: block;
+            margin: 0 auto;
+            font-weight: bold;
+        }
+        .stTextInput > label, .stSelectbox label, .stNumberInput label {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: blue;
+            background: linear-gradient(to bottom, #cccccc 0%, #999999 100%);
             border: 2px;
             border-radius: 3px;
-            }
-
-            input[class]{
-            font-weight: bold;
-            font-size:120%;
-            color: black;
-            }
-            </style>
-            """, unsafe_allow_html=True)
-
-st.markdown("""
-                <style>
-
-                .stSelectbox label {
-                  font-size:150%; 
-                font-weight:bold; 
-                color:blue; 
-                background:linear-gradient(to bottom, #cccccc 0%, #999999 100%);
+        }
+        div[data-baseweb="base-input"], input[class] {
             border: 2px;
-                border-radius: 3px;
-                }
-                </style>
-                """, unsafe_allow_html=True)
-
-# Pour le formulaire css
-st.markdown("""
-            <style>
-            .stForm  {
-                font-size: 1.8rem;
-                font-weight: bold;
-                color: white;
-                background: linear-gradient(to bottom, #3399ff 0%, #00ffff 90%);
-                border: 2px solid;
-                border-radius: 3px;
-            }
-            </style>
-            """, unsafe_allow_html=True)
-
-# Pour les paragraphes
-st.markdown(
-    """
-    <style>
-    .custom-label {
-        font-size: 1.2rem;
-        color: blue;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-# Couleur du label number
-st.markdown("""
-        <style>
-        .stNumberInput label {
-             color: blue;
+            border-radius: 3px;
             font-weight: bold;
-            font-size: 1.5rem;
-            text-align: center;
-             background:linear-gradient(to bottom, #cccccc 0%, #999999 100%);
-                border: 2px;
-                border-radius: 3px;
+            font-size: 1.2rem;
+            color: black;
         }
-
+        .stForm {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(to bottom, #3399ff 0%, #00ffff 90%);
+            border: 2px solid;
+            border-radius: 3px;
         }
-        </style>
-        """, unsafe_allow_html=True)
-
-st.markdown("""
-        <style>
-        .stTextInput label {
-              color: blue;
-              font-weight: bold;
-              font-size: 1.5rem;
-              text-align: center;
+        .custom-label {
+            font-size: 1.2rem;
+            color: blue;
         }
-        .stTextInput label {
+    </style>
+""", unsafe_allow_html=True)
 
-
-             font-size: 45px; 
-
-        }
-        </style>
-        """, unsafe_allow_html=True)
-
-import mysql.connector
-import config as cf  # Assurez-vous que ce module est correctement importé pour la connexion
 
 def modifier_valeur_indicateur_libelle(id, nom_region=None, nom_departement=None, nom_sousprefecture=None,
                                       nom_indicateur=None, Valeur=None, Annee=None, sexe=None, groupe_age=None,
@@ -239,9 +182,6 @@ def enregistrer_rejet(id, commentaires):
 
 
 def modifier():
-    st.markdown("<h2 class='text-center text-primary custom-bold-text'>Formulaire de rejet et d'approbation</h2>",
-                unsafe_allow_html=True)
-
     id = st.number_input("ID de l'enregistrement", min_value=1, step=1)
 
     if id:
